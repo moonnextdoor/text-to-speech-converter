@@ -1,4 +1,4 @@
-# PDF Reader with Voice (Text-to-Speech Web App)
+(Text-to-Speech Web App)
 
 A simple web app that converts any typed text into speech using the browser’s built-in Speech Synthesis API.  
 Includes a clean animated background built with pure CSS.
