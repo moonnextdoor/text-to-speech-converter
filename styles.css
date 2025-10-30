@@ -1,0 +1,127 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* center all hero content */
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: black;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* animated background */
+:root {
+    --stripe-color: #fff;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(100deg,
+            rgba(255, 255, 255, 0.15) 0%,
+            rgba(255, 255, 255, 0.15) 7%,
+            transparent 10%,
+            transparent 12%,
+            rgba(255, 255, 255, 0.15) 16%),
+        repeating-linear-gradient(100deg,
+            #60a5fa 10%,
+            #e879f9 15%,
+            #60a5fa 20%,
+            #5eead4 25%,
+            #60a5fa 30%);
+    background-size: 300%, 200%;
+    animation: smoothBg 60s linear infinite;
+    filter: blur(10px);
+    mix-blend-mode: screen;
+    z-index: 0;
+    opacity: 0.25;
+}
+
+
+@keyframes smoothBg {
+    from {
+        background-position: 50% 50%, 50% 50%;
+    }
+
+    to {
+        background-position: 350% 50%, 350% 50%;
+    }
+}
+
+/* hero text + form */
+.hero h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 45px;
+    font-weight: 700;
+    color: white;
+}
+
+.hero h1 span {
+    color: purple;
+}
+
+textarea {
+    position: relative;
+    font-size: 15px;
+    z-index: 1;
+    width: 600px;
+    height: 250px;
+    background-color: #a8a8af79;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 16px;
+    outline: 0;
+    resize: none;
+    margin-bottom: 30px;
+}
+
+textarea::placeholder {
+    font-size: 16px;
+    color: black
+}
+
+.row {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 20px;
+    width: 600px;
+    align-items: center;
+}
+
+button {
+    background-color: rgba(215, 203, 203, 0.356);
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 20px;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+}
+
+select {
+    flex: 1;
+    color: #fff;
+    background-color: rgba(215, 203, 203, 0.356);
+    height: 50px;
+    padding: 0 20px;
+    outline: 0;
+    border: 0;
+    border-radius: 35px;
+    appearance: none;
+}
